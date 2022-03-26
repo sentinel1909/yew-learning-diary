@@ -17,3 +17,7 @@ Cargo.lock
 # Added by cargo
 
 /target
+
+# ignore the distribution directory
+
+/dist
