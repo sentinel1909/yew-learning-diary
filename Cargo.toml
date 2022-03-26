@@ -1,0 +1,11 @@
+# Yew-Learning-Diary cargo configuration file
+
+[package]
+name = "yew-learning-diary"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+yew = "0.19"
