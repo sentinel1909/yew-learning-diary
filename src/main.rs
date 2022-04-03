@@ -6,7 +6,7 @@ use yew::prelude::*;
 
 /// struct to represent a diary entry
 struct Entry {
-    id: usize,
+    id: i32,
     date: String,
     title: String,
     content: String,
@@ -34,25 +34,37 @@ impl Component for App {
     }
 
     fn view(&self, _ctx: &Context<Self>) -> Html {
-        // declare a vector of diary entries
-        let entries = vec![
+        // data forming diary entries
+        let data = vec![
             Entry {
                 id: 1,
                 date: String::from("2022-03-26"),
                 title: String::from("It Lives!"),
                 content: String::from("Barebones site up and running.")
+            },
+            Entry {
+                id: 2,
+                date: String::from("2022-04-03"),
+                title: String::from("Iteration Working!"),
+                content: String::from("Diary content is now added via iteration on the data vector.")
             }
         ];
+        // transform the data into entries
+        let entries = data.iter().map(|entry| html! { 
+            <>
+                <h3> {&entry.date} </h3>
+                <h3> {&entry.title} </h3>
+                <p> {&entry.content} </p>
+            </>
+        }).collect::<Html>();
         html! {
-            <main>
+            <main class="container">
                 <header>
                     <h1> {"Yew Learning Diary"}</h1>
                     <h2> {"Documenting the journey to learn the Yew framework for WebAssembly apps in Rust"} </h2>
                 </header>
-                <section>   // render the diary entries, so far there's just one...need to iterate on this eventually
-                    <h3> {&entries[0].date} </h3>
-                    <h3> {&entries[0].title} </h3>
-                    <p> {&entries[0].content} </p>
+                <section>   
+                    { entries }
                 </section>
                 <footer>
                     <p> { "Copyright 2022 Jeffery D Mitchell All Rights Reserved" } </p>
