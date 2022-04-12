@@ -9,7 +9,7 @@ edition = "2021"
 
 [lib]
 name = "yewlearningdiary"
-path = "src/lib/mod.rs"
+path = "src/lib/lib.rs"
 
 [dependencies]
 yew = "0.19"
