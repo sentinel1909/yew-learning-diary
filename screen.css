@@ -68,3 +68,20 @@ select {
 .container {
   margin-left: 1.25em;
 }
+
+.header {
+  padding-bottom: 1.25em;
+}
+
+.section {
+  padding-top: 1.25em;
+  padding-bottom: 1.25em;
+}
+
+.article {
+  padding-bottom: 1.25em;
+}
+
+.footer {
+  padding-top: 1.25em;
+}

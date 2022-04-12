@@ -13,3 +13,5 @@ path = "src/lib/lib.rs"
 
 [dependencies]
 yew = "0.19"
+uuid = { version = "0.8", features = ["wasm-bindgen", "v4"] }
+chrono = { version = "0.4", features = ["wasmbind"] }

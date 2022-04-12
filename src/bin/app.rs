@@ -28,18 +28,18 @@ impl Component for App {
     }
 
     fn view(&self, _ctx: &Context<Self>) -> Html {  
-        // call get_data function to pull in entries from the internal data file
-        let entries = get_data().iter().map(|entry| html! { 
-            <>
+        // the Entry struct has a new method use to pull in entries from the internal data file
+        let entries = Entry::new().iter().map(|entry| html! { 
+            <article class="article">
                 <h3> {&entry.date} </h3>
                 <h3> {&entry.title} </h3>
                 <p> {&entry.content} </p>
-            </>
+            </article>
         }).collect::<Html>();
         html! {
             <main class="container">
                 <Header />
-                <section>   
+                <section class="section">   
                     { entries }
                 </section>
                 <Footer />

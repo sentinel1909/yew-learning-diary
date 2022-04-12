@@ -1,11 +1,12 @@
-use yew::{function_component, html};
+use yew::{function_component, html, use_state};
+use chrono::Datelike;
 
 #[function_component(Header)]
 pub fn header() -> Html {
     html! {
-        <header>
+        <header class="header">
                 <h1> {"Yew Learning Diary"}</h1>
-                <h2> {"Documenting the journey to learn the Yew framework for WebAssembly apps in Rust"} </h2>
+                <h2> {"Documenting the journey to learn the Yew framework for Rust WebAssembly"} </h2>
         </header>
 
     }
@@ -13,9 +14,10 @@ pub fn header() -> Html {
 
 #[function_component(Footer)]
 pub fn footer() -> Html {
+    let time = use_state(|| chrono::Local::now().date() );
     html! {
-        <footer>
-            <p> { "Copyright 2022 Jeffery D Mitchell All Rights Reserved" } </p>
+        <footer class="footer">
+            <p> { "Copyright" } {" "} {time.year()} {" "} { "Jeffery D Mitchell All Rights Reserved" } </p>
             <p><a href="https://github.com/sentinel1909/yew-learning-diary" target ="_blank"> {"GitHub repo for this site"}</a></p>
         </footer>
 
