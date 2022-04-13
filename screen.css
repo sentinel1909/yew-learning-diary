@@ -66,7 +66,10 @@ select {
 /* Main Styles */
 
 .container {
-  margin-left: 1.25em;
+  width: min(100%, 140em);
+  margin-inline: auto;
+  padding-left: 1.25em;
+  padding-right: 1.25em;
 }
 
 .header {

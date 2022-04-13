@@ -1,14 +1,11 @@
 // src/app.rs
 // to run this app, type "trunk serve --open" at the command line at the top of the yew-learning-diary directory
 
-// pull in the yew crate 
 use yew::prelude::*;
 
-// pull in external modules
 use yewlearningdiary::data::*;
 use yewlearningdiary::components::*;
 
-// root component, gets mounted into index.html
 enum Msg {
 
 }
@@ -27,10 +24,10 @@ impl Component for App {
         false
     }
 
-    fn view(&self, _ctx: &Context<Self>) -> Html {  
-        // the Entry struct has a new method use to pull in entries from the internal data file
-        let entries = Entry::new().iter().map(|entry| html! { 
+    fn view(&self, _ctx: &Context<Self>) -> Html {        
+        let entries = build_entries().into_iter().map(|entry| html! { 
             <article class="article">
+                <p> {&entry.id} </p>
                 <h3> {&entry.date} </h3>
                 <h3> {&entry.title} </h3>
                 <p> {&entry.content} </p>
