@@ -48,9 +48,16 @@ pub fn build_entries() -> Entries {
         title: "Functional Components and use_state".to_owned(),
         content: "Broke the header and footer out into separate components, using Yew's notion of functional components. Added the uuid crate to generate a unique ID for each diary entry (displayed while I play, but will eventually hide this). Added the chrono crate and figured out Yew's equivalent of use_state to add the year to the copyright notice in the footer. Added some CSS to start formatting the site.".to_owned(),
     };
+    let entry4 = Entry {
+        id: Uuid::new_v4(),
+        date: "2022-04-17".to_owned(),
+        title: "Goals Section".to_owned(),
+        content: "Added a goals section underneath the site header.".to_owned(),
+    };
     built_entries.add(entry1);
     built_entries.add(entry2);
     built_entries.add(entry3);
+    built_entries.add(entry4);
     built_entries
 }
 

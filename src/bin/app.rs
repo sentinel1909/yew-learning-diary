@@ -36,6 +36,7 @@ impl Component for App {
         html! {
             <main class="container">
                 <Header />
+                <Goals />
                 <section class="section">   
                     { entries }
                 </section>

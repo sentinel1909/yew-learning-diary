@@ -5,10 +5,21 @@ use chrono::Datelike;
 pub fn header() -> Html {
     html! {
         <header class="header">
-                <h1> {"Yew Learning Diary"}</h1>
-                <h2> {"Documenting the journey to learn the Yew framework for Rust WebAssembly"} </h2>
+                <h1> {"Yew (and Rust) Learning Diary"}</h1>
+                <h2> {"Documenting the journey to learn Rust and the Yew framework for WebAssembly"} </h2>
         </header>
 
+    }
+}
+
+#[function_component(Goals)]
+pub fn goals() -> Html {
+    html! {
+        <section>
+            <h3> {"Site Goals:"}</h3>
+            <p> {"Get diary entries into a database, they are currently drawn from a hardcode data file."} </p>
+            <p> {"Learn Yew Router to add ability to navigate between different pages."} </p>
+        </section>
     }
 }
 
