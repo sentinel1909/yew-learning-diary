@@ -76,6 +76,13 @@ select {
   padding-bottom: 1.25em;
 }
 
+.navbar {
+  width: min(100%, 140em);
+  margin-inline: auto;
+  padding-left: 1.25em;
+  padding-bottom: 1.25em;
+}
+
 .section {
   padding-top: 1.25em;
   padding-bottom: 1.25em;

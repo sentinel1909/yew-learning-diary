@@ -2,18 +2,24 @@
 // to run this app, type "trunk serve --open" at the command line at the top of the yew-learning-diary directory
 
 use yew::prelude::*;
+use yew::html::Scope;
+use yew_router::prelude::*;
 
-use yewlearningdiary::data::*;
-use yewlearningdiary::components::*;
+use yewlearningdiary::pages::Home;
+use yewlearningdiary::pages::About;
 
-enum Msg {
-
+#[derive(Clone, Routable, PartialEq)]
+enum Route {
+    #[at("/")]
+    Home,
+    #[at("/About")]
+    About,
 }
 
-struct App {}
+struct App {}  
 
 impl Component for App {
-    type Message = Msg;
+    type Message = ();
     type Properties = ();
 
     fn create(_ctx: &Context<Self>) -> Self {
@@ -24,29 +30,44 @@ impl Component for App {
         false
     }
 
-    fn view(&self, _ctx: &Context<Self>) -> Html {        
-        let entries = build_entries().into_iter().map(|entry| html! { 
-            <article class="article">
-                <p> {&entry.id} </p>
-                <h3> {&entry.date} </h3>
-                <h3> {&entry.title} </h3>
-                <p> {&entry.content} </p>
-            </article>
-        }).collect::<Html>();
+    fn view(&self, ctx: &Context<Self>) -> Html {        
         html! {
-            <main class="container">
-                <Header />
-                <Goals />
-                <section class="section">   
-                    { entries }
-                </section>
-                <Footer />
-            </main>
+            <BrowserRouter>
+                <main>
+                    { self.nav_bar(ctx.link()) }
+                    <Switch<Route> render={Switch::render(switch)} />
+                </main>
+            </BrowserRouter>
         }
     }
 }
 
-// start up and mount root component into index.html
+impl App {
+    fn nav_bar(&self, _link: &Scope<Self>) -> Html {
+        html! {
+            <nav class={classes!("navbar")}>
+                <Link<Route> to={Route::Home}>
+                    { "Home | " }
+                </Link<Route>>
+                <Link<Route> to={Route::About}>
+                    { "About" }
+                </Link<Route>>
+            </nav>
+        }
+    }
+}
+
+fn switch(routes: &Route) -> Html {
+    match routes {
+        Route::Home => {
+            html! { <Home /> }
+         },
+         Route::About => {
+             html! { <About /> }
+         }
+    }
+}
+
 fn main() {
     yew::start_app::<App>();
 }

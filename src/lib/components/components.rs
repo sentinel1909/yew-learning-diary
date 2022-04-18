@@ -17,8 +17,10 @@ pub fn goals() -> Html {
     html! {
         <section>
             <h3> {"Site Goals:"}</h3>
-            <p> {"Get diary entries into a database, they are currently drawn from a hardcode data file."} </p>
-            <p> {"Learn Yew Router to add ability to navigate between different pages."} </p>
+            <p> {"Further breakdown components into smaller bits...they're all in one file currently."} </p>
+            <p> {"Get some images incorporated into the site."} </p>
+            <p> {"Improve formatting...current layout is my usual hacky css and it sucks."} </p>
+            <p> {"Diary entries should be pulled from a database via an API. All data is hard-coded into the app, diary entry IDs regenerate on each page load and they shouldn't."} </p>
         </section>
     }
 }

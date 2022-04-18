@@ -52,7 +52,7 @@ pub fn build_entries() -> Entries {
         id: Uuid::new_v4(),
         date: "2022-04-17".to_owned(),
         title: "Goals Section".to_owned(),
-        content: "Added a goals section underneath the site header.".to_owned(),
+        content: "Added a goals section underneath the site header. Working towards completion of one of the goals, yew-router is implemented and started to re-factor into separate pages. Navigation started at very top of page, created links for Home and About.  Added skeleton About Page.".to_owned(),
     };
     built_entries.add(entry1);
     built_entries.add(entry2);
