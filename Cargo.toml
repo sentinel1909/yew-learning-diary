@@ -2,6 +2,7 @@
 
 [package]
 name = "yew-learning-diary"
+homepage = "https://allthingsrust.net"
 version = "0.1.0"
 edition = "2021"
 

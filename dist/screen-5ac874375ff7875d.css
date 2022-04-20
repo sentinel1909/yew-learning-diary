@@ -1,0 +1,97 @@
+/* CSS styles for the Yew Learning Diary */
+
+/* Reset */
+
+html,
+body,
+div,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+ol,
+li,
+dl,
+dt,
+dd,
+form,
+fieldset,
+caption,
+table,
+tr,
+td,
+th,
+address,
+blockquote,
+img {
+  margin: 0;
+  padding: 0;
+}
+img,
+fieldset,
+object {
+  border: none;
+}
+*,
+*:after,
+*:before {
+  flex: 1 0 auto; /* safari bugfix */
+  box-sizing: border-box;
+}
+button,
+label {
+  cursor: pointer;
+}
+html,
+body {
+  height: 100%;
+}
+
+hr {
+  display: none;
+}
+body,
+button,
+input,
+table,
+textarea,
+select {
+  font: normal 1em/1.5 "poppins", arial, helvetica, sans-serif;
+}
+
+/* Main Styles */
+
+.container {
+  width: min(100%, 140em);
+  margin-inline: auto;
+  padding-left: 1.25em;
+  padding-right: 1.25em;
+}
+
+.header {
+  padding-bottom: 1.25em;
+}
+
+.navbar {
+  width: min(100%, 140em);
+  margin-inline: auto;
+  padding-left: 1.25em;
+  padding-bottom: 1.25em;
+}
+
+.section {
+  padding-top: 1.25em;
+  padding-bottom: 1.25em;
+}
+
+.article {
+  padding-bottom: 1.25em;
+}
+
+.footer {
+  padding-top: 1.25em;
+}

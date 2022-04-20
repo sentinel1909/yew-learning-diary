@@ -18,6 +18,3 @@ Cargo.lock
 
 /target
 
-# ignore the distribution directory
-
-/dist
