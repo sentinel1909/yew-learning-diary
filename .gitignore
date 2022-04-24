@@ -18,3 +18,7 @@ Cargo.lock
 
 /target
 
+# Ignore deployment directory
+
+/deploy
+
